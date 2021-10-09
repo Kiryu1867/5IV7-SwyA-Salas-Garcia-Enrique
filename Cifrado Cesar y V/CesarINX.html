@@ -5,8 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cesar</title>
+    <link rel="stylesheet" href="CifradosCSS.css">
+    <script src="CesarJS.js" ></script>
 </head>
 <body>
+    
+    <div class = "contorno1"> 
+    <div class= "titulo"><h2>Cifrado por metodo del Cesar</h2></div>
+        <form>
+            
+            <br>
+            <br>
+            <h3> Escriba aqui su mensaje a cifrar</h3>
+            <input type="text" id="cadena" onkeypress="return validarm(event)">
+            <br>
+            
+            <h3>Tamaño del texto a cifrar</h3>
+            <input    id="desplazamiento" type="range" min="0" max="27" 
+            oninput="this.nextElementSibling.value =this.value">
+            <output></output>
+    
+            <br>
+           
+            
+            
+            <h3> Mensaje codificado</h3>
+            <input type="text" id="resultado" disabled>
+            <br>
+            <input type="button" id="ci" value="Cifrar" onclick="cifrar()">
+            <input type="button" id="de" value="Descifrar" onclick="descifrar()">
+        </form>
+    </div>
+
+
+    
+    
+    </div>
+
     
 </body>
 </html>

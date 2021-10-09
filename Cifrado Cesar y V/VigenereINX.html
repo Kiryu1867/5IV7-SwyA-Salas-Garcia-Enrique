@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vigenere</title>
+    <link rel="stylesheet" href="CifradosCSS.css">
+    <script src="VigenereJS.js" ></script>
 </head>
 <body>
-    
+    <div class = "contorno1"> 
+        <h2> Cifrado por metodo de Viggener</h2>
+        <br>
+        <h3><h3> Mensaje a codificar</h3></h3>
+        <input type="text" id="cadena">
+        <br>
+        <h3>introdusca una clave</h3>
+        <input type="text" id="clave">
+    <br>
+    <h3> Mensaje</h3>
+    <input type="text" id="resultado" disabled>
+    <br>
+    <input type="button" value="Cifrar" onclick="cifrar()" > 
+    <input type="button"  value="Descifrar" onclick="descifrar()">
+
+        </div>
 </body>
 </html>
