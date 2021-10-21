@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado AES</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="AES.js"></script>
+</head>
+<body>
+    <div class="contorno1">
+        <p>Mensaje a cifrar</p>
+        <textarea id="mensaje"></textarea>
+        <br>
+        <p>Ingresa una clave</p>
+        <input type="text" id="clave" rows="4"></textarea>
+        <br>
+        <h3>seleccione el tipo de cifrado de AES </h3>
+        <br>
+        <input type="radio" id="A128" name="valor" value="A128">AES de 128
+        <br>
+        <input type="radio" id="A192" name="valor" value="A192">AES de 192
+        <br>
+        <input type="radio" id="A256" name="valor" value="A256">AES de 256
+        <br> <br>
+        <button type="submit" class="boton" id="cifrado">Cifrar</button>
+        <p>Mensaje cifrado(nota: debe de</p>
+        <textarea cols="120" rows="7" id="MCif"></textarea>
+        <p>Descarga</p>
+        <button type="submit" class="boton" id="descargar_txt">Descargar archivo</button>
+        Nota: 
+        <br> La clave de 256 debe ser de longitud mayor a 24 caracteres
+        La clave de 128 debe ser de longitud mayor a 16 caracteres y menor a 24
+        La clave de 92 debe ser de longitud  menor a 16 caracteres
+        
+        <script>
+            $('#descargar_txt').click(function(){
+                var cifrado = document.getElementById('MCif').value;
+                if(cifrado==""){
+                    prompt("Debe escribir un mensaje a cifrar");
+                }
+                else
+                {
+                    var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                    saveAs(blob, "Cifrado.txt");
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
